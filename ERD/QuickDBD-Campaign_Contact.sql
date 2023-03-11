@@ -1,20 +1,21 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
+-- Link to schema: https://app.quickdatabasediagrams.com/#/d/aRfoDC
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
 CREATE TABLE "category" (
-    "cat_ids" varchar(5)   NOT NULL,
+    "category_id" varchar(5)   NOT NULL,
     "category" varchar(50)   NOT NULL,
     CONSTRAINT "pk_category" PRIMARY KEY (
-        "cat_ids"
+        "category_id"
      )
 );
 
 CREATE TABLE "subcategory" (
-    "subcat_ids" varchar(8)   NOT NULL,
+    "subcategory_id" varchar(8)   NOT NULL,
     "subcategory" varchar(60)   NOT NULL,
     CONSTRAINT "pk_subcategory" PRIMARY KEY (
-        "subcat_ids"
+        "subcategory_id"
      )
 );
 
@@ -41,8 +42,8 @@ CREATE TABLE "campaign" (
     "currency" varchar(3)   NOT NULL,
     "launch_date" date   NOT NULL,
     "end_date" date   NOT NULL,
-    "cat_ids" varchar(5)   NOT NULL,
-    "subcat_ids" varchar(8)   NOT NULL,
+    "category_id" varchar(5)   NOT NULL,
+    "subcategory_id" varchar(8)   NOT NULL,
     CONSTRAINT "pk_campaign" PRIMARY KEY (
         "cf_id"
      )
@@ -51,9 +52,9 @@ CREATE TABLE "campaign" (
 ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_contact_id" FOREIGN KEY("contact_id")
 REFERENCES "contacts" ("contact_id");
 
-ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_cat_ids" FOREIGN KEY("cat_ids")
-REFERENCES "category" ("cat_ids");
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_category_id" FOREIGN KEY("category_id")
+REFERENCES "category" ("category_id");
 
-ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_subcat_ids" FOREIGN KEY("subcat_ids")
-REFERENCES "subcategory" ("subcat_ids");
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_subcategory_id" FOREIGN KEY("subcategory_id")
+REFERENCES "subcategory" ("subcategory_id");
 
