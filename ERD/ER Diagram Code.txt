@@ -1,22 +1,12 @@
 category
 -
-cat_ids varchar(5) PK
+category_id varchar(5) PK
 category varchar(50)
 
 subcategory
 -
-subcat_ids varchar(8) PK
+subcategory_id varchar(8) PK
 subcategory varchar(60)
-
-cat_subcat
--
-cat_ids varchar(5) PK  FK >- category.cat_ids
-subcat_ids varchar(8) PK FK >- subcategory.subcat_ids
-
-country_currency
--
-country varchar(2) PK
-currency varchar(3) PK
 
 contacts
 -
@@ -33,11 +23,11 @@ company_name varchar(100)
 description varchar(200)
 goal float
 pledge float
-outcome float
+outcome varchar(20)
 backers_count int
-country varchar(2) FK >- country_currency.country
-currency varchar(3) FK >- country_currency.currency
+country varchar(2) 
+currency varchar(3) 
 launch_date date
 end_date date
-cat_ids varchar(5) FK >- cat_subcat.cat_ids
-subcat_ids varchar(8) FK >- cat_subcat.subcat_ids
+category_id varchar(5) FK >- category.category_id
+subcategory_id varchar(8) FK >- subcategory.subcategory_id
