@@ -20,4 +20,5 @@ b) Contacts Data Frame
   2. The related icons of each table were connected together and from the website the sql file format was exported.
   3. The sql file is imported into SQL server (PgAdmin) and the data structure and formats were produced.
   4. As four tables in SQL server were assigned, the corresponding csv files were imported into database: category, subcategory, contacts and capmaign
+  5. SQL select queries 
   
