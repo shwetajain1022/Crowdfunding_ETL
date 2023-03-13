@@ -18,6 +18,7 @@ b) Contacts Data Frame
   2. Using JSON import, the content of each JSON in each row was extracted and appended into a dictionary and then into a data frame.
   3. The "name" column was broken into two columns of "first_name" and "last_name" and the former column "name" was deleted.
   4. Another csv file (contacts.csv) was produced as contacts information was exported from data frame.
+  5. The option 2 for using regex was also worked out; but it was only for practice purposes.
   
   
  c) Database Creation
